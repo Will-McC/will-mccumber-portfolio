@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Will McCumber — Professional Portfolio</title>
+  <meta name="description" content="Portfolio of Will McCumber — Technical Program/Project Manager specializing in healthcare operations, compensation systems, and enterprise transformation." />
+  <meta name="author" content="Will McCumber" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Will McCumber — Professional Portfolio" />
+  <meta property="og:description" content="Technical Program/Project Manager | Healthcare operations, compensation systems, enterprise transformation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://YOUR-DOMAIN/assets/headshot.jpg" />
+  <meta property="og:url" content="https://YOUR-DOMAIN/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;          /* slate-950 */
+      --panel: #0f172a;       /* slate-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e2e8f0;        /* slate-200 */
+      --accent: #38bdf8;      /* sky-400 */
+      --accent-2: #f472b6;    /* pink-400 */
+      --ring: rgba(56, 189, 248, .35);
+      --card: #111827;
+      --border: #1f2937;
+      --link: #7dd3fc;
+    }
+    :root.light {
+      --bg: #f8fafc;          /* slate-50 */
+      --panel: #ffffff;        /* white */
+      --muted: #475569;        /* slate-600 */
+      --text: #0f172a;         /* slate-900 */
+      --accent: #0ea5e9;       /* sky-500 */
+      --accent-2: #db2777;     /* pink-600 */
+      --ring: rgba(14,165,233,.35);
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --link: #0369a1;         /* sky-800 */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 1200px at 80% -10%, rgba(56,189,248,.12), transparent 40%),
+                  radial-gradient(1000px 1000px at -10% 10%, rgba(244,114,182,.10), transparent 40%),
+                  var(--bg);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
+      background: color-mix(in oklab, var(--panel), transparent 30%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: .85rem 0; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .2px; }
+    .brand .dot { width: .6rem; height: .6rem; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 3px var(--ring); }
+    nav a { color: var(--text); text-decoration: none; opacity: .85; font-weight: 500; margin-left: 1rem; }
+    nav a:hover { opacity: 1; color: var(--accent); }
+
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1rem; border-radius: .75rem; border: 1px solid var(--border); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), #000 10%), var(--panel)); color: var(--text); text-decoration: none; box-shadow: 0 2px 0 0 rgba(0,0,0,.2) inset; }
+    .btn:hover { border-color: color-mix(in oklab, var(--accent), var(--border) 70%); box-shadow: 0 0 0 3px var(--ring); }
+    .btn.primary { background: linear-gradient(180deg, color-mix(in oklab, var(--accent), #000 5%), var(--accent)); color: #001018; border-color: transparent; font-weight: 700; }
+    .btn.primary:hover { box-shadow: 0 0 0 4px var(--ring); }
+
+    /* Hero */
+    .hero { padding: 5rem 0 3rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; padding: .3rem .6rem; border-radius: 999px; border: 1px solid var(--border); background: color-mix(in oklab, var(--panel), transparent 25%); color: var(--muted); font-size: .875rem; }
+    .eyebrow svg { width: 16px; height: 16px; }
+    h1 { font-size: clamp(2rem, 2.6rem + 1vw, 3.2rem); line-height: 1.15; margin: 1rem 0 .75rem; }
+    .lead { font-size: clamp(1rem, .9rem + .4vw, 1.25rem); color: var(--muted); max-width: 75ch; }
+    .cta { display: flex; gap: .75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+    /* Headshot */
+    .avatar-wrap { display:flex; justify-content:center; }
+    .avatar {
+      width: 220px; height: 220px; object-fit: cover; border-radius: 999px;
+      border: 2px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 6px var(--ring);
+      background: #0b1220;
+    }
+
+    /* Highlights */
+    .highlights { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin: 2.5rem 0 3rem; }
+    .stat { border: 1px solid var(--border); background: color-mix(in oklab, var(--panel), transparent 20%); border-radius: 1rem; padding: 1rem; }
+    .stat h3 { margin: 0; font-size: 1.5rem; }
+    .stat p { margin: .35rem 0 0; color: var(--muted); font-size: .95rem; }
+
+    /* Sections */
+    section { padding: 3rem 0; border-top: 1px solid var(--border); }
+    .section-title { font-size: 1.25rem; letter-spacing: .5px; opacity: .9; margin-bottom: 1.25rem; }
+
+    /* Experience timeline */
+    .timeline { position: relative; padding-left: 1.25rem; }
+    .timeline:before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: linear-gradient(var(--accent), var(--accent-2)); opacity: .6; }
+    .role { position: relative; border: 1px solid var(--border); background: var(--card); border-radius: 1rem; padding: 1rem; margin-bottom: 1rem; }
+    .role:before { content: ""; position: absolute; left: -8px; top: 1rem; width: 14px; height: 14px; border-radius: 999px; background: radial-gradient(circle at 40% 35%, var(--accent), var(--accent-2)); box-shadow: 0 0 0 3px var(--ring); }
+    .role h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
+    .role .meta { color: var(--muted); font-size: .95rem; margin-bottom: .5rem; }
+    .role ul { margin: .5rem 0 0 1rem; }
+    .role li { margin: .35rem 0; }
+
+    /* Cards grid */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    /* Skill chips */
+    .chips { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .chip { border: 1px solid var(--border); background: color-mix(in oklab, var(--panel), transparent 20%); padding: .4rem .6rem; border-radius: .6rem; font-size: .9rem; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--muted); }
+
+    /* Utilities */
+    .muted { color: var(--muted); }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background: color-mix(in oklab, var(--panel), transparent 30%); padding: .1rem .35rem; border-radius: .35rem; border: 1px solid var(--border); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .highlights { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid { grid-template-columns: 1fr; text-align: left; }
+      .avatar { width: 160px; height: 160px; }
+      .col-6, .col-4, .col-8 { grid-column: span 12; }
+    }
+
+    /* Print-friendly (1–2 pages) */
+    @media (print) {
+      header, .cta, .highlights, .chips, .theme-toggle, .avatar-wrap { display: none !important; }
+      body { background: white; color: black; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="visually-hidden" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Will McCumber</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn theme-toggle" id="themeToggle" aria-label="Toggle theme">🌗</button>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/></svg>
+            Technical Program / Project Manager — Healthcare & Enterprise Ops
+          </span>
+          <h1>Systems-focused leader modernizing compensation & operations at scale.</h1>
+          <p class="lead">
+            I align product, engineering, HRIS, and operations to deliver durable, AI‑ready systems. Recent work includes rebuilding a <strong>$2M+</strong> physician compensation platform at Envision Healthcare and streamlining onboarding & credentialing pipelines that cut time‑to‑productivity by up to <strong>50%</strong>.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#contact">Get in touch</a>
+            <a class="btn" href="/assets/Will_McCumber_Resume.pdf" download>Download resume</a>
+            <a class="btn" href="https://www.linkedin.com/in/will-mccumber/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+
+          <div class="highlights" role="list" aria-label="Career highlights">
+            <div class="stat" role="listitem"><h3>5+ years</h3><p>Cross‑functional PM in healthcare & enterprise ops</p></div>
+            <div class="stat" role="listitem"><h3>$2M+ program</h3><p>Compensation platform modernization (Envision)</p></div>
+            <div class="stat" role="listitem"><h3>1,200+ members</h3><p>Gainshare payouts administered accurately</p></div>
+            <div class="stat" role="listitem"><h3>50% faster</h3><p>Physician onboarding & credentialing pipeline</p></div>
+          </div>
+        </div>
+        <div class="avatar-wrap">
+          <img class="avatar" src="/assets/headshot.jpg" alt="Headshot of Will McCumber in suit and tie" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <div class="timeline">
+        <article class="role">
+          <h3>Project Manager — Enterprise Program Management Office (EPMO)</h3>
+          <div class="meta">Envision Healthcare (via Kforce) · May 2024 – Present · Remote / US</div>
+          <ul>
+            <li>Spearheading a <strong>$2M+</strong> enterprise modernization to rebuild Envision’s physician compensation platform with scalable, AI‑ready architecture.</li>
+            <li>Surfaced critical complexity in shift‑differential logic, prompting executive compensation reforms across clinical service‑line leadership.</li>
+            <li>Driving alignment across HRIS, IT, Compensation, Contracts, and vendors to standardize compensation and enable platform scalability.</li>
+            <li>Established sprint cadences and Smartsheet/JIRA dashboards to maintain delivery momentum and executive visibility.</li>
+            <li>Leading readiness to retire legacy systems and lay the groundwork for broader enterprise transformation.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>PMO Project Coordinator</h3>
+          <div class="meta">Innovation Care Partners (AP Professionals → HonorHealth) · Jul 2021 – May 2024 · Scottsdale, AZ</div>
+          <ul>
+            <li>Managed the <strong>$3M+</strong> 2023 Physician Gainshare Program; ensured accurate payouts to <strong>1,200+</strong> members and secured executive approval for a revised distribution model.</li>
+            <li>Redesigned credentialing & onboarding pipeline, reducing time‑to‑productivity by ~<strong>50%</strong> and accelerating capture of covered lives.</li>
+            <li>Supported the CAO as liaison and DEI Council representative; advanced interdepartmental priorities and executive communications.</li>
+            <li>Led LMS deployment and new‑hire automation with cybersecurity & compliance; drove organization‑wide adoption and training efficacy.</li>
+            <li>Planned & tracked projects using JIRA, Confluence, MS Project; instituted cross‑team operating rhythms.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>Founder & Company Lead — Hyalus Watches</h3>
+          <div class="meta">May 2018 – Dec 2020 · E‑commerce</div>
+          <ul>
+            <li>Raised <strong>$26K</strong> from <strong>$4K</strong> ad spend via crowdfunding; managed full product lifecycle (design → sourcing → fulfillment).</li>
+            <li>Adapted supply chain during COVID to sustain prototyping timelines and customer communication.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>Project Specialist (Independent Contractor) — AS &amp; Co (now Deckmode)</h3>
+          <div class="meta">Mar 2020 – Jun 2021 · Remote</div>
+          <ul>
+            <li>Cut customer acquisition costs by &gt;50% through funnel analysis and creative testing.</li>
+            <li>Implemented automated onboarding workflows in Asana and improved SOPs for content production.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Selected Projects</h2>
+      <div class="grid">
+        <article class="role col-6">
+          <h3>Simpliphy RVU Compensation Implementation</h3>
+          <div class="meta">Envision Healthcare · 2024–2025</div>
+          <p class="muted">Automating RVU‑based compensation workflows for Emergency & Hospital Medicine to standardize pay profiles and reduce manual reconciliation. Established agile delivery, cross‑functional governance, and dashboards for executive visibility. Key milestone: physician demo scheduled for <strong>September 16, 2025</strong>.</p>
+        </article>
+        <article class="role col-6">
+          <h3>Physician Gainshare Program</h3>
+          <div class="meta">Innovation Care Partners · 2023</div>
+          <p class="muted">Directed year‑long program spanning discovery → development → QA → production. Ensured accurate distribution to 1,200+ members and instituted data quality checks to reduce rework.</p>
+        </article>
+        <article class="role col-6">
+          <h3>Onboarding & Credentialing Pipeline</h3>
+          <div class="meta">Innovation Care Partners · 2022–2024</div>
+          <p class="muted">Unified onboarding across departments; implemented JIRA ticketing flow and automations to cut credentialing timelines roughly in half and capture covered lives faster.</p>
+        </article>
+        <article class="role col-6">
+          <h3>Hyalus — Crowdfunded Product Launch</h3>
+          <div class="meta">Founder · 2018–2020</div>
+          <p class="muted">Bootstrapped DTC watch brand; executed market validation, creative, and fulfillment; maintained service levels amid COVID supply shocks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
+      <div class="grid">
+        <div class="role col-6">
+          <h3>MBA Candidate (Expected 2027)</h3>
+          <div class="meta">Kelley School of Business, Indiana University</div>
+          <p class="muted">Kelley Direct Momentum Scholarship</p>
+        </div>
+        <div class="role col-6">
+          <h3>B.S., Political Science &amp; Civic and Economic Thought and Leadership</h3>
+          <div class="meta">Arizona State University · GPA 4.0</div>
+          <p class="muted">McCain Institute Policy Design Fellow</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills & Tools</h2>
+      <div class="role">
+        <div class="chips" aria-label="Tooling">
+          <span class="chip">Smartsheet</span>
+          <span class="chip">JIRA</span>
+          <span class="chip">ServiceNow</span>
+          <span class="chip">Confluence</span>
+          <span class="chip">MS Project</span>
+          <span class="chip">Asana</span>
+        </div>
+        <p class="muted" style="margin-top:.75rem;">Methods: Agile · Scrum · Hybrid · Waterfall · Program/Portfolio Ops · Stakeholder Alignment · Executive Reporting</p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div class="grid">
+        <div class="role col-8">
+          <p>Based in New Mexico · Open to US‑based hybrid/remote roles and advisory collaborations.</p>
+          <div class="chips">
+            <a class="btn" href="https://www.linkedin.com/in/will-mccumber/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          </div>
+        </div>
+        <aside class="col-4">
+          <div class="stat">
+            <h3>Availability</h3>
+            <p class="muted">Actively delivering on current program; open to strategic PM/TPM roles and select consulting.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <span>© <span id="y"></span> Will McCumber</span>
+        <span class="muted">Built as a fast, single‑file site. <span class="kbd">index.html</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year & theme
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light') root.classList.add('light');
+    toggle.addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    });
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Will McCumber",
+    "jobTitle": "Technical Program / Project Manager",
+    "url": "https://YOUR-DOMAIN/",
+    "sameAs": [
+      "https://www.linkedin.com/in/will-mccumber/"
+    ],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Indiana University Kelley School of Business" },
+      { "@type": "CollegeOrUniversity", "name": "Arizona State University" }
+    ]
+  }
+  </script>
+</body>
+</html>
