@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Will McCumber — Professional Portfolio</title>
+  <meta name="description" content="Portfolio of Will McCumber — Program/Project Manager specializing in healthcare operations, compensation systems, and enterprise transformation." />
+  <meta name="author" content="Will McCumber" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.willmccumber.com/" />
+
+  <!-- Icons (add files in /assets as needed) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Will McCumber — Professional Portfolio" />
+  <meta property="og:description" content="Program/Project Manager | Healthcare operations, compensation systems, enterprise transformation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.willmccumber.com/assets/headshot.jpg" />
+  <meta property="og:url" content="https://www.willmccumber.com/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Will McCumber — Professional Portfolio" />
+  <meta name="twitter:description" content="Program/Project Manager | Healthcare operations, compensation systems, enterprise transformation." />
+  <meta name="twitter:image" content="https://www.willmccumber.com/assets/headshot.jpg" />
+
+  <!-- Analytics -->
+  <script src="https://cdn.counter.dev/script.js" data-id="87e6ac7b-272c-470d-b0e3-2a1204f4a0e0" data-utcoffset="-7" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;          /* slate-950 */
+      --panel: #0f172a;       /* slate-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e2e8f0;        /* slate-200 */
+      --accent: #38bdf8;      /* sky-400 */
+      --accent-2: #f472b6;    /* pink-400 */
+      --ring: rgba(56, 189, 248, .35);
+      --card: #111827;
+      --border: #1f2937;
+      --link: #7dd3fc;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    :root.light {
+      --bg: #f8fafc;          /* slate-50 */
+      --panel: #ffffff;        /* white */
+      --muted: #475569;        /* slate-600 */
+      --text: #0f172a;         /* slate-900 */
+      --accent: #0ea5e9;       /* sky-500 */
+      --accent-2: #db2777;     /* pink-600 */
+      --ring: rgba(14,165,233,.35);
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --link: #0369a1;         /* sky-800 */
+      --shadow: 0 12px 26px rgba(15, 23, 42, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 1200px at 80% -10%, rgba(56,189,248,.12), transparent 40%),
+                  radial-gradient(1000px 1000px at -10% 10%, rgba(244,114,182,.10), transparent 40%),
+                  var(--bg);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Accessible helpers */
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .skip-link {
+      position: absolute;
+      left: 1rem; top: 1rem;
+      transform: translateY(-200%);
+      padding: .55rem .8rem;
+      border-radius: .75rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      z-index: 999;
+    }
+    .skip-link:focus { transform: translateY(0); outline: none; box-shadow: 0 0 0 4px var(--ring), var(--shadow); }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: color-mix(in oklab, var(--panel), transparent 30%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: .85rem 0; gap: .75rem; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .2px; text-decoration: none; color: var(--text); }
+    .brand .dot { width: .6rem; height: .6rem; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 3px var(--ring); }
+
+    .nav-right { display:flex; align-items:center; gap: .5rem; }
+    nav { display:flex; align-items:center; }
+    nav a { color: var(--text); text-decoration: none; opacity: .85; font-weight: 500; margin-left: 1rem; }
+    nav a:hover { opacity: 1; color: var(--accent); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .7rem 1rem; border-radius: .75rem;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--panel), #000 10%), var(--panel));
+      color: var(--text);
+      text-decoration: none;
+      box-shadow: 0 2px 0 0 rgba(0,0,0,.2) inset;
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .btn:hover { border-color: color-mix(in oklab, var(--accent), var(--border) 70%); box-shadow: 0 0 0 3px var(--ring); }
+    .btn.primary { background: linear-gradient(180deg, color-mix(in oklab, var(--accent), #000 5%), var(--accent)); color: #001018; border-color: transparent; font-weight: 700; }
+    .btn.primary:hover { box-shadow: 0 0 0 4px var(--ring); }
+    .btn.small { padding: .55rem .75rem; border-radius: .65rem; }
+
+    button.btn { -webkit-appearance: none; appearance: none; }
+    button.btn::-moz-focus-inner { border: 0; padding: 0; }
+
+    .nav-toggle { display:none; }
+    .nav-links { display:flex; align-items:center; }
+
+    /* Hero */
+    .hero { padding: 5rem 0 3rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; padding: .3rem .6rem; border-radius: 999px; border: 1px solid var(--border); background: color-mix(in oklab, var(--panel), transparent 25%); color: var(--muted); font-size: .875rem; }
+    .eyebrow svg { width: 16px; height: 16px; }
+    h1 { font-size: clamp(2rem, 2.6rem + 1vw, 3.2rem); line-height: 1.15; margin: 1rem 0 .75rem; }
+    .lead { font-size: clamp(1rem, .9rem + .4vw, 1.25rem); color: var(--muted); max-width: 75ch; }
+    .cta { display: flex; gap: .75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+    /* Headshot */
+    .avatar-wrap { display:flex; justify-content:center; }
+    .avatar {
+      width: 220px; height: 220px; object-fit: cover; border-radius: 999px;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow), 0 0 0 6px var(--ring);
+      background: #0b1220;
+    }
+
+    /* Highlights */
+    .highlights { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin: 2.5rem 0 3rem; }
+    .stat { border: 1px solid var(--border); background: color-mix(in oklab, var(--panel), transparent 20%); border-radius: 1rem; padding: 1rem; }
+    .stat h3 { margin: 0; font-size: 1.5rem; }
+    .stat p { margin: .35rem 0 0; color: var(--muted); font-size: .95rem; }
+
+    /* Sections */
+    section { padding: 3rem 0; border-top: 1px solid var(--border); }
+    .section-title { font-size: 1.25rem; letter-spacing: .5px; opacity: .9; margin-bottom: 1.25rem; }
+
+    /* Experience timeline */
+    .timeline { position: relative; padding-left: 1.25rem; }
+    .timeline:before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: linear-gradient(var(--accent), var(--accent-2)); opacity: .6; }
+    .role { position: relative; border: 1px solid var(--border); background: var(--card); border-radius: 1rem; padding: 1rem; margin-bottom: 1rem; }
+    .role:before { content: ""; position: absolute; left: -8px; top: 1rem; width: 14px; height: 14px; border-radius: 999px; background: radial-gradient(circle at 40% 35%, var(--accent), var(--accent-2)); box-shadow: 0 0 0 3px var(--ring); }
+    .role h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
+    .role .meta { color: var(--muted); font-size: .95rem; margin-bottom: .5rem; }
+    .role ul { margin: .5rem 0 0 1rem; }
+    .role li { margin: .35rem 0; }
+    .role .kicker { margin-top: .75rem; padding-top: .75rem; border-top: 1px dashed color-mix(in oklab, var(--border), transparent 35%); }
+
+    /* Cards grid */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    /* Skill chips */
+    .chips { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+    .chip { border: 1px solid var(--border); background: color-mix(in oklab, var(--panel), transparent 20%); padding: .4rem .6rem; border-radius: .6rem; font-size: .9rem; }
+    a.link { color: var(--link); text-decoration: none; }
+    a.link:hover { text-decoration: underline; }
+
+    /* Details (mini case studies) */
+    details { margin-top: .75rem; border-top: 1px dashed color-mix(in oklab, var(--border), transparent 35%); padding-top: .75rem; }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 650;
+      color: var(--link);
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    summary::-webkit-details-marker { display:none; }
+    summary:after { content: "▾"; opacity: .75; }
+    details[open] summary:after { content: "▴"; }
+    details p, details ul { margin-top: .6rem; }
+    .case-list { margin: .65rem 0 0 1.1rem; }
+    .case-list li { margin: .45rem 0; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--muted); }
+
+    /* Utilities */
+    .muted { color: var(--muted); }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background: color-mix(in oklab, var(--panel), transparent 30%); padding: .1rem .35rem; border-radius: .35rem; border: 1px solid var(--border); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .highlights { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid { grid-template-columns: 1fr; text-align: left; }
+      .avatar { width: 160px; height: 160px; }
+      .col-6, .col-4, .col-8 { grid-column: span 12; }
+
+      .nav-toggle { display:inline-flex; }
+      .nav-links {
+        position: absolute;
+        left: 0; right: 0;
+        top: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.25rem 1.1rem;
+        background: color-mix(in oklab, var(--panel), transparent 8%);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+      }
+      header.nav-open .nav-links { display:flex; }
+      nav { width: 100%; flex-direction: column; align-items:flex-start; }
+      nav a { margin: .35rem 0 0; padding: .35rem .25rem; width: 100%; border-radius: .6rem; }
+      nav a:hover { background: color-mix(in oklab, var(--panel), transparent 15%); }
+    }
+
+    /* Print-friendly (1–2 pages) */
+    @media (print) {
+      header, .cta, .highlights, .chips, .theme-toggle, .nav-toggle, .avatar-wrap { display: none !important; }
+      body { background: white; color: black; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#about">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Will McCumber</span>
+      </a>
+
+      <div class="nav-right">
+        <button class="btn small nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">☰</button>
+
+        <div class="nav-links" id="primaryNav">
+          <nav aria-label="Primary">
+
+            <a href="#about">About</a>
+            <a href="case-studies/index.html">Case Studies</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+
+        <a class="btn small" href="assets/Will_McCumber_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <button class="btn small theme-toggle" id="themeToggle" aria-label="Toggle theme">🌗</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg>
+            Program / Project Manager — Healthcare & Enterprise Ops
+          </span>
+          <h1>Program &amp; Project Manager modernizing compensation systems and enterprise operations.</h1>
+          <p class="lead">
+            I align product, engineering, HRIS, and operations to deliver durable, AI‑ready systems. Recent work includes rebuilding a <strong>$2M+</strong> physician compensation platform at Envision Healthcare and streamlining ICP's onboarding & credentialing pipelines to cut time‑to‑productivity by up to <strong>50%</strong>.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#contact">Get in touch</a>
+            <a class="btn" href="assets/Will_McCumber_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+                        <a class="btn" href="case-studies/index.html">Case studies</a>
+<a class="btn" href="https://www.linkedin.com/in/will-mccumber/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+
+          <p class="muted" style="margin:.75rem 0 0; font-size:.95rem; max-width: 80ch;">
+            Hiring manager? The <a class="link" href="case-studies/index.html">case studies</a> show decisions, governance, and measurable outcomes.
+          </p>
+
+          <div class="highlights" role="list" aria-label="Career highlights">
+            <div class="stat" role="listitem"><h3>5+ years</h3><p>Cross‑functional PM in healthcare & enterprise ops</p></div>
+            <div class="stat" role="listitem"><h3>$2M+ program</h3><p>Compensation platform modernization (Envision)</p></div>
+            <div class="stat" role="listitem"><h3>1,200+ members</h3><p>Gainshare payouts administered accurately</p></div>
+            <div class="stat" role="listitem"><h3>50% faster</h3><p>Physician onboarding & credentialing pipeline</p></div>
+          </div>
+        </div>
+        <div class="avatar-wrap">
+          <img class="avatar" src="assets/headshot.jpg" alt="Headshot of Will McCumber in suit and tie" width="220" height="220" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <section id="operating-model" aria-labelledby="operating-title">
+      <h2 class="section-title" id="operating-title">How I run programs</h2>
+      <div class="grid">
+        <div class="role col-8">
+          <p class="muted" style="margin-top:0;">
+            My default operating model is built to keep delivery moving while making decisions obvious, auditable, and reversible when needed.
+          </p>
+          <ul class="case-list">
+            <li><strong>Governance:</strong> clear decision rights, escalation paths, steering/working group cadence, decision log.</li>
+            <li><strong>Delivery rhythm:</strong> sprint or hybrid cadence, dependency tracking, weekly executive readout, unblock-focused standups.</li>
+            <li><strong>Risk management:</strong> RAID ownership, early risk surfacing, mitigations tied to dates/owners, no “hidden work.”</li>
+            <li><strong>Scope control:</strong> change control with impact (time/cost/quality), “must vs nice-to-have” alignment.</li>
+            <li><strong>Metrics:</strong> cycle time, defect escape, throughput, adoption readiness (training, comms, support), and ROI proxy metrics.</li>
+            <li><strong>Stakeholder alignment:</strong> stakeholder map, comms plan, and artifacts designed for exec scanning (not meeting notes).</li>
+            <li><strong>Tooling:</strong> Smartsheet/JIRA dashboards, Confluence/SharePoint documentation, and lightweight templates teams actually use.</li>
+          </ul>
+        </div>
+        <aside class="col-4">
+          <div class="stat">
+            <h3>Principle</h3>
+            <p class="muted">Make the work visible, make tradeoffs explicit, and keep delivery teams focused on the highest-leverage work.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <div class="timeline">
+        <article class="role">
+          <h3>Project Manager — Enterprise Program Management Office (EPMO)</h3>
+          <div class="meta">Envision Healthcare (via Kforce) · May 2024 – Present · Remote / US</div>
+          <ul>
+            <li>Spearheading a <strong>$2M+</strong> enterprise modernization to rebuild Envision’s physician compensation platform with scalable, AI‑ready architecture.</li>
+            <li>Surfaced critical complexity in shift‑differential logic, prompting executive compensation reforms across clinical service‑line leadership.</li>
+            <li>Driving alignment across HRIS, IT, Compensation, Contracts, and vendors to standardize compensation and enable platform scalability.</li>
+            <li>Established sprint cadences and Smartsheet/JIRA dashboards to maintain delivery momentum and executive visibility.</li>
+            <li>Leading readiness to retire legacy systems and lay the groundwork for broader enterprise transformation.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>PMO Project Coordinator</h3>
+          <div class="meta">Innovation Care Partners (AP Professionals → HonorHealth) · Jul 2021 – May 2024 · Scottsdale, AZ</div>
+          <ul>
+            <li>Managed the <strong>$3M+</strong> 2023 Physician Gainshare Program; ensured accurate payouts to <strong>1,200+</strong> members and secured executive approval for a revised distribution model.</li>
+            <li>Redesigned credentialing & onboarding pipeline, reducing time‑to‑productivity by ~<strong>50%</strong> and accelerating capture of covered lives.</li>
+            <li>Supported the CAO as liaison and DEI Council representative; advanced interdepartmental priorities and executive communications.</li>
+            <li>Led LMS deployment and new‑hire automation with cybersecurity & compliance; drove organization‑wide adoption and training efficacy.</li>
+            <li>Planned & tracked projects using JIRA, Confluence, MS Project; instituted cross‑team operating rhythms.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>Founder & Company Lead — Hyalus Watches</h3>
+          <div class="meta">May 2018 – Dec 2020 · E‑commerce</div>
+          <ul>
+            <li>Raised <strong>$26K</strong> from <strong>$4K</strong> ad spend via crowdfunding; managed full product lifecycle (design → sourcing → fulfillment).</li>
+            <li>Adapted supply chain during COVID to sustain prototyping timelines and customer communication.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>Project Specialist (Independent Contractor) — AS &amp; Co (now Deckmode)</h3>
+          <div class="meta">Mar 2020 – Jun 2021 · Remote</div>
+          <ul>
+            <li>Cut customer acquisition costs by &gt;50% through funnel analysis and creative testing.</li>
+            <li>Implemented automated onboarding workflows in Asana and improved SOPs for content production.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Selected Work (snapshots)</h2>
+      <p class="muted" style="margin-top:-.5rem; max-width: 80ch;">
+        Quick highlights for skimming. Deeper write-ups are in <a class="link" href="#case-studies">Case Studies</a> below.
+      </p>
+
+      <div class="grid">
+        <article class="role col-6">
+          <h3>Compensation Platform Modernization</h3>
+          <div class="meta">Envision Healthcare · 2024–Present</div>
+          <ul class="case-list muted" style="margin-top:.35rem;">
+            <li><strong>Scope:</strong> $2M+ modernization rebuilding physician compensation workflows (including RVU components) with scalable, audit-ready controls.</li>
+            <li><strong>Work style:</strong> cross-functional governance across HRIS, IT, Compensation, Contracts, and clinical leaders with sprint cadence + executive visibility.</li>
+          </ul>
+</article>
+
+        <article class="role col-6">
+          <h3>Onboarding &amp; Credentialing Pipeline</h3>
+          <div class="meta">Innovation Care Partners · 2022–2024</div>
+          <ul class="case-list muted" style="margin-top:.35rem;">
+            <li><strong>Scope:</strong> unified intake, ownership, and automation across departments using JIRA-based workflows.</li>
+            <li><strong>Impact:</strong> reduced time-to-productivity by ~<strong>50%</strong> and lowered rework from missing/inaccurate inputs.</li>
+          </ul>
+</article>
+
+        <article class="role col-6">
+          <h3>Physician Gainshare Program</h3>
+          <div class="meta">Innovation Care Partners · 2023</div>
+          <ul class="case-list muted" style="margin-top:.35rem;">
+            <li><strong>Scope:</strong> managed a $3M+ incentive program with discovery → build → QA → production gates and audit-friendly documentation.</li>
+            <li><strong>Impact:</strong> accurate distribution to <strong>1,200+</strong> members and executive approval for an improved distribution model.</li>
+          </ul>
+</article>
+
+        <article class="role col-6">
+          <h3>Hyalus — Crowdfunded Product Launch</h3>
+          <div class="meta">Founder · 2018–2020</div>
+          <ul class="case-list muted" style="margin-top:.35rem;">
+            <li><strong>Scope:</strong> ran end-to-end product lifecycle (design → sourcing → fulfillment) under capital constraints.</li>
+            <li><strong>Impact:</strong> raised <strong>$26K</strong> from <strong>$4K</strong> ad spend and sustained delivery through COVID-era supply disruptions.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="case-studies" aria-labelledby="case-studies-title">
+      <h2 class="section-title" id="case-studies-title">Case Studies (deep dives)</h2>
+      <p class="muted" style="margin-top:-.5rem; max-width: 80ch;">
+        If you want more than a resume scan, these short write-ups show my operating model in the real world—decision points, governance, and measurable outcomes.
+      </p>
+
+      <div class="grid">
+        <article class="role col-4">
+          <h3>Compensation Platform Modernization</h3>
+          <div class="meta">Envision Healthcare · 2024–Present</div>
+          <ul class="case-list muted" style="margin-top:.35rem;">
+            <li>Rebuilding a physician compensation platform with scalable workflows and audit-ready controls.</li>
+            <li>Cross-functional governance across HRIS, IT, Compensation, Contracts, and clinical leaders.</li>
+          </ul>
+          <div class="kicker">
+            <a class="btn small" href="case-studies/envision-compensation-modernization.html">Read case study</a>
+          </div>
+        </article>
+
+        <article class="role col-4">
+          <h3>Onboarding &amp; Credentialing Pipeline</h3>
+          <div class="meta">Innovation Care Partners · 2022–2024</div>
+          <ul class="case-list muted" style="margin-top:.35rem;">
+            <li>Unified intake, ownership, and automation across departments.</li>
+            <li>Reduced time-to-productivity by ~<strong>50%</strong> and lowered rework from missing inputs.</li>
+          </ul>
+          <div class="kicker">
+            <a class="btn small" href="case-studies/onboarding-credentialing-pipeline.html">Read case study</a>
+          </div>
+        </article>
+
+        <article class="role col-4">
+          <h3>Physician Gainshare Program</h3>
+          <div class="meta">Innovation Care Partners · 2023</div>
+          <ul class="case-list muted" style="margin-top:.35rem;">
+            <li>Year-long delivery from discovery → build → QA → production with approval gates.</li>
+            <li>Accurate distribution to <strong>1,200+</strong> members with executive-aligned revisions.</li>
+          </ul>
+          <div class="kicker">
+            <a class="btn small" href="case-studies/physician-gainshare-program.html">Read case study</a>
+          </div>
+        </article>
+
+        <div class="col-12" style="display:flex; justify-content:flex-end;">
+          <a class="btn" href="case-studies/index.html">View all case studies</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
+      <div class="grid">
+        <div class="role col-6">
+          <h3>MBA Candidate (Expected 2027)</h3>
+          <div class="meta">Kelley School of Business, Indiana University</div>
+          <p class="muted">Kelley Direct Momentum Scholarship</p>
+        </div>
+        <div class="role col-6">
+          <h3>B.S., Political Science &amp; Civic and Economic Thought and Leadership</h3>
+          <div class="meta">Arizona State University · GPA 4.0</div>
+          <p class="muted">McCain Institute Policy Design Fellow</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills &amp; Tools</h2>
+      <div class="role">
+        <div class="chips" aria-label="Tooling">
+          <span class="chip">Smartsheet</span>
+          <span class="chip">JIRA</span>
+          <span class="chip">ServiceNow</span>
+          <span class="chip">Confluence</span>
+          <span class="chip">MS Project</span>
+          <span class="chip">Asana</span>
+        </div>
+        <p class="muted" style="margin-top:.75rem;">Methods: Agile · Scrum · Hybrid · Waterfall · Program/Portfolio Ops · Stakeholder Alignment · Executive Reporting</p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div class="grid">
+        <div class="role col-8">
+          <p style="margin-top:0;">Based in New Mexico · Open to US‑based hybrid/remote roles and advisory collaborations.</p>
+
+          <div class="kicker">
+
+            <div class="chips" style="align-items:center;">
+              <a class="btn primary" id="emailBtn" href="#" rel="noopener">Email me</a>
+              <button class="btn" id="copyEmailBtn" type="button">Copy email</button>
+              <a class="btn" href="https://www.linkedin.com/in/will-mccumber/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" id="calendlyBtn" href="#" target="_blank" rel="noopener" style="display:none;">Schedule 15‑min chat</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="col-4">
+          <div class="stat">
+            <h3>Availability</h3>
+            <p class="muted">Actively delivering on current program; open to Program and Project Manager roles and select consulting.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <span>© <span id="y"></span> Will McCumber</span>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // -----------------------------
+    // Config (edit these)
+    // -----------------------------
+    const CONTACT = {
+      email: "hello@willmccumber.com",   // website inbox (forwarding alias)
+      calendly: ""                      // optional: "https://calendly.com/your-handle/15min"
+    };
+
+    // -----------------------------
+    // Small helpers
+    // -----------------------------
+    const $ = (id) => document.getElementById(id);
+
+    // Year
+    $("y").textContent = new Date().getFullYear();
+
+    // Theme: stored preference → system preference → default dark
+    const root = document.documentElement;
+    const toggle = $("themeToggle");
+    const stored = localStorage.getItem("theme");
+    const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+    if (stored === "light" || (!stored && prefersLight)) root.classList.add("light");
+
+    toggle.addEventListener("click", () => {
+      root.classList.toggle("light");
+      localStorage.setItem("theme", root.classList.contains("light") ? "light" : "dark");
+    });
+
+    // Mobile nav
+    const header = $("siteHeader");
+    const navToggle = $("navToggle");
+    const nav = $("primaryNav");
+
+    function setNav(open) {
+      header.classList.toggle("nav-open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+      navToggle.textContent = open ? "✕" : "☰";
+    }
+
+    navToggle.addEventListener("click", () => setNav(!header.classList.contains("nav-open")));
+    // Close menu after clicking a link (mobile)
+    nav.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target && target.tagName === "A" && header.classList.contains("nav-open")) setNav(false);
+    });
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && header.classList.contains("nav-open")) setNav(false);
+    });
+
+    // Contact wiring
+    const email = (CONTACT.email || "").trim();
+    const isPlaceholder = !email || email.includes("your.email") || email.includes("example.com");
+    const emailBtn = $("emailBtn");
+    const copyBtn = $("copyEmailBtn");
+    const emailText = $("emailText");
+    const emailHint = $("emailHint");
+    const calendlyBtn = $("calendlyBtn");
+
+    if (emailText) emailText.textContent = email || "your.email@domain.com";
+    emailBtn.href = email ? `mailto:${email}` : "#";
+
+    if (isPlaceholder) {
+      if (copyBtn) copyBtn.style.display = "none";
+      if (emailHint) emailHint.style.display = "block";
+      emailBtn.setAttribute("aria-disabled", "true");
+      emailBtn.addEventListener("click", (e) => e.preventDefault());
+    } else {
+      if (emailHint) emailHint.style.display = "none";
+      emailBtn.removeAttribute("aria-disabled");
+      // Clipboard support (fallback: select text)
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          copyBtn.textContent = "Copied!";
+          setTimeout(() => (copyBtn.textContent = "Copy email"), 1200);
+        } catch (_) {
+          // Fallback: create a temporary input for manual copy
+          const input = document.createElement("input");
+          input.value = email;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          document.body.removeChild(input);
+          copyBtn.textContent = "Copied!";
+          setTimeout(() => (copyBtn.textContent = "Copy email"), 1200);
+        }
+      });
+    }
+
+    const calendly = (CONTACT.calendly || "").trim();
+    if (calendly) {
+      calendlyBtn.href = calendly;
+      calendlyBtn.style.display = "inline-flex";
+    }
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Will McCumber",
+    "jobTitle": "Program / Project Manager",
+    "url": "https://www.willmccumber.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/will-mccumber/"
+    ],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Indiana University Kelley School of Business" },
+      { "@type": "CollegeOrUniversity", "name": "Arizona State University" }
+    ]
+  }
+  </script>
+</body>
+</html>
