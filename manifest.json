@@ -1,0 +1,12 @@
+{
+  "name": "Will McCumber | Strategy and Program Delivery",
+  "short_name": "Will McCumber",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#fbfaf7",
+  "icons": [
+    { "src": "/assets/icon.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -14,6 +14,7 @@
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Will McCumber | Strategy and Program Delivery" />
@@ -34,7 +35,16 @@
   "@type": "Person",
   "name": "Will McCumber",
   "jobTitle": "Program Manager",
+  "description": "Strategy and program delivery professional specializing in cross-functional transformation work, stakeholder alignment, and operational delivery.",
   "url": "https://www.willmccumber.com/",
+  "image": "https://www.willmccumber.com/assets/headshot.jpg",
+  "email": "hello@willmccumber.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "NM",
+    "addressCountry": "US"
+  },
+  "knowsAbout": ["Program Management", "Project Management", "Business Operations", "Stakeholder Alignment", "Workflow Optimization"],
   "sameAs": [
     "https://www.linkedin.com/in/will-mccumber/"
   ]
@@ -45,6 +55,7 @@
   <script src="https://cdn.counter.dev/script.js" data-id="87e6ac7b-272c-470d-b0e3-2a1204f4a0e0" data-utcoffset="-7" defer></script>
 
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@350;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&display=swap" rel="stylesheet">
 
@@ -69,6 +80,7 @@
       </nav>
     </div>
 
+    <button class="btn small icon theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">🌙</button>
     <button class="btn small icon nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
   </div>
 </header>
@@ -97,11 +109,11 @@
       </div>
 
       <div class="card pad-lg">
-        <div class="media" style="aspect-ratio: 4/5;">
-          <img src="assets/headshot.jpg" alt="Headshot of Will McCumber" loading="eager" />
+        <div class="media aspect-4-5">
+          <img src="assets/headshot.jpg" alt="Headshot of Will McCumber" loading="eager" width="2316" height="2316" />
         </div>
         <div class="caption">
-          <p style="margin:.15rem 0 0;">I build trust through clarity, steady cadence, and follow-through.</p>
+          <p class="caption-text">I build trust through clarity, steady cadence, and follow-through.</p>
         </div>
       </div>
     </div>
@@ -187,17 +199,17 @@
 
       <div class="grid two">
         <div class="card pad">
-          <p class="lead" style="margin-top:0;">Hyalus is the dive watch I designed from scratch.</p>
+          <p class="lead mt-0">Hyalus is the dive watch I designed from scratch.</p>
 	          <p>I took Altum from sketches to CAD to a working prototype, then ran a Kickstarter launch. It reached <strong>116</strong> backers and <strong>$26,891</strong> pledged.</p>
 
-          <div class="chips" style="margin:.85rem 0 0;">
+          <div class="chips mt-sm">
             <a class="pill" href="https://www.instagram.com/hyalus.watches/" target="_blank" rel="noopener">Instagram</a>
             <a class="pill" href="https://www.kickstarter.com/projects/hyalus/hyalus-watches-project-altum" target="_blank" rel="noopener">Kickstarter</a>
           </div>
 
-          <div class="grid two hyalus-facts" style="margin-top:1.2rem;">
+          <div class="grid two hyalus-facts mt-lg">
             <div class="card pad hyalus-fact">
-              <h3 style="margin-top:0;">Watch at a glance</h3>
+              <h3 class="mt-0">Watch at a glance</h3>
               <ul class="list hyalus-list">
                 <li><strong>40mm</strong> stainless steel case.</li>
                 <li><strong>200m</strong> water resistance.</li>
@@ -207,7 +219,7 @@
             </div>
 
             <div class="card pad hyalus-fact">
-              <h3 style="margin-top:0;">What I did</h3>
+              <h3 class="mt-0">What I did</h3>
 	              <ul class="list hyalus-list">
                 <li>Designed the case, dial, and brand language.</li>
                 <li>Modeled parts in CAD and iterated toward manufacturable tolerances.</li>
@@ -218,28 +230,28 @@
             </div>
           </div>
 
-          <p class="note" style="margin-top:1rem;">Simple, unique, robust.</p>
+          <p class="note mt-md">Simple, unique, robust.</p>
         </div>
 
         <div class="card hyalus-media-card">
           <div class="hyalus-media">
             <figure class="media hyalus-feature">
-              <img src="assets/img/hyalus/cactus.jpg" alt="Hyalus watch in the New Mexico desert" loading="lazy" />
+              <img src="assets/img/hyalus/cactus.jpg" alt="Hyalus watch in the New Mexico desert" loading="lazy" width="1699" height="1800" />
             </figure>
             <p class="note hyalus-caption">Altum in the New Mexico desert.</p>
 
             <div class="hyalus-grid" aria-label="Hyalus photo grid">
               <figure class="media glow">
-                <img src="assets/img/hyalus/lume.jpg" alt="Hyalus watch lume photo" loading="lazy" />
+                <img src="assets/img/hyalus/lume.jpg" alt="Hyalus watch lume photo" loading="lazy" width="1800" height="1350" />
               </figure>
               <figure class="media">
-                <img src="assets/img/hyalus/watch-on-wood.jpg" alt="Hyalus watch on a wood surface" loading="lazy" />
+                <img src="assets/img/hyalus/watch-on-wood.jpg" alt="Hyalus watch on a wood surface" loading="lazy" width="1800" height="1799" />
               </figure>
               <figure class="media">
-                <img src="assets/img/hyalus/crown-logo.jpg" alt="Hyalus crown macro with logo" loading="lazy" />
+                <img src="assets/img/hyalus/crown-logo.jpg" alt="Hyalus crown macro with logo" loading="lazy" width="1600" height="1200" />
               </figure>
               <figure class="media">
-                <img src="assets/img/hyalus/render-angle.png" alt="Hyalus CAD render" loading="lazy" />
+                <img src="assets/img/hyalus/render-angle.png" alt="Hyalus CAD render" loading="lazy" width="1800" height="1800" />
               </figure>
             </div>
           </div>
@@ -259,7 +271,7 @@
 
       <div class="grid two">
         <div class="card pad">
-          <p style="margin-top:0;">
+          <p class="mt-0">
             I am a project and program manager who likes hard problems that live between systems and stakeholders. I am most useful when the work is cross-functional, the constraints are real, and trust matters.
           </p>
           <p>
@@ -268,7 +280,7 @@
         </div>
 
         <div class="card pad">
-          <h3 style="margin-top:0;">Practical strengths</h3>
+          <h3 class="mt-0">Practical strengths</h3>
           <ul class="list">
             <li>Executive-ready status and decision framing.</li>
             <li>Workflow mapping, dependency management, and sequencing pilots.</li>
@@ -291,13 +303,13 @@
 
       <div class="grid two">
         <div class="card pad">
-          <h3 style="margin-top:0;">Email</h3>
+          <h3 class="mt-0">Email</h3>
           <p><a href="mailto:hello@willmccumber.com">hello@willmccumber.com</a></p>
           <p class="note">Fastest way to reach me.</p>
         </div>
 
         <div class="card pad">
-          <h3 style="margin-top:0;">Links</h3>
+          <h3 class="mt-0">Links</h3>
           <p><a href="https://www.linkedin.com/in/will-mccumber/" target="_blank" rel="noopener">LinkedIn</a></p>
           <p><a href="assets/Will_McCumber_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a></p>
         </div>
@@ -307,12 +319,22 @@
 </main>
 
 <footer class="footer">
-  <div class="container row">
-    <div>© <span id="y"></span> Will McCumber</div>
-    <div class="note">Strategy and Program Delivery</div>
+  <div class="container">
+    <div class="footer-nav">
+      <a href="case-studies/index.html">Case Studies</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/Will_McCumber_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="https://www.linkedin.com/in/will-mccumber/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="row">
+      <div>&copy; <span id="y"></span> Will McCumber</div>
+      <div class="note">Strategy and Program Delivery</div>
+    </div>
   </div>
 </footer>
 
+<button class="btn small icon back-to-top" id="topBtn" aria-label="Back to top">&#8593;</button>
 <script src="assets/site.js" defer></script>
 </body>
 </html>
